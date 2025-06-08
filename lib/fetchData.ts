@@ -2,7 +2,7 @@
 export async function fetchData(): Promise<string> {
   const res = await fetch('https://worldtimeapi.org/api/timezone/Etc/UTC', {
     // 告诉 Vercel：缓存这个请求结果 10 秒
-    next: { revalidate: 10 },
+    next: { revalidate: 0 },
   });
 
   if (!res.ok) throw new Error('Failed to fetch');
